@@ -1,7 +1,7 @@
 {
   "posts": [
-    { "id": 1, "title": "Hola GitHub" },
-    { "id": 2, "title": "Probando mi API" }
+    { "id": 1, "title": "Post en Github 1" },
+    { "id": 2, "title": "Post en Github 2" }
   ],
   "profile": { "name": "Ian" }
 }
