@@ -7,8 +7,7 @@
   "Apartado1":[
     { "id": 4, "title": "Post en Github 4" },
     { "id": 5, "title": "Post en Github 5" },
-    { "id": 6, "title": "Post en Github 6" }
-    
+    { "id": 6, "title": "Post en Github 6" }   
   ],
   "profile": { "name": "Ian" }
 }
