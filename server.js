@@ -12,7 +12,8 @@ ex.use(cors());
 ex.oauth = new OAuth2Server ({ 
         model: require('./model'), 
         accessTokenLifetime: 3600, 
-        allowBearerTokensInQueryString: true});
+        allowBearerTokensInQueryString: true
+    });
 
 function autenticacion(request, response, next) 
     {   
@@ -34,7 +35,8 @@ ex.get('/datos-publicos', (req, res) => {
 
 ex.get('/datos-privados', autenticacion, (req, res) => { 
     const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'datos-privados.json'), 'utf8'));
-    res.json(data);});
+    res.json(data);}
+);
 
 ex.post('/datos-privados', autenticacion, (req, res) => { 
     try {
@@ -67,5 +69,5 @@ ex.post('/oauth/token', (req, res) => {
 });
 
 
-ex.listen(3030, '0.0.0.0', () => { 
+ex.listen(3050, '192.168.250.129', () => { 
     console.log('Servidor corriendo');});
