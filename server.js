@@ -19,14 +19,14 @@ function autenticacion(request, response, next)
     {   
         const req = new OAuth2Server.Request(request);
         const res = new OAuth2Server.Response(response); 
-        ex.oauth.autenticate(req, res) 
+        ex.oauth.authenticate(req, res) 
             .then((token) => 
                 { 
                     request.user = token.user; 
                     next(); 
                 }
                 )
-            .catch((err) => { request.status(401).json({error: 'Acceso denegado'}); });
+            .catch((err) => { response.status(401).json({error: 'Acceso denegado'}); });
         }
 
 ex.get('/datos-publicos', (req, res) => { 
@@ -69,5 +69,5 @@ ex.post('/oauth/token', (req, res) => {
 });
 
 
-ex.listen(3050, '192.168.250.129', () => { 
+ex.listen(3000, '0.0.0.0', () => { 
     console.log('Servidor corriendo');});
